@@ -1,5 +1,15 @@
-# Github-Avatar-Downloader
-LHL w2d1 project: Github Avatar Downloader
+# GitHub Avatar Downloader
+
+## Problem Statement
+
+Given a GitHub repository name and owner, download all the contributors' profile images and save them to a subdirectory, `avatars/`.
+
+## Expected Usage
+
+This program should be executed from the command line, in the following manner:
+
+`node download_avatars.js jquery jquery`
+
 
 ## Given
 * I have node installed
@@ -7,7 +17,7 @@ LHL w2d1 project: Github Avatar Downloader
 * I have your file in my current folder
 
 ## When
-* I execute your file using node, providing a github user and repository as command-line arguments For example: $ node 
+* I execute your file using node, providing a github user and repository as command-line arguments For example: $ node
 * download_avatars.js nodejs node
 
 ## Then
