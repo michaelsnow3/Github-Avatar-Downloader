@@ -1,5 +1,6 @@
 var request = require('request');
 var token = require('./secrets.js');
+var fs = require('fs');
 
 function getRepoContributors(repoOwner, repoName, cb) {
   var options = {
@@ -16,9 +17,15 @@ function getRepoContributors(repoOwner, repoName, cb) {
   });
 }
 
+function downloadImageByURL(url, filePath) {
+  request
+    .get(url)
+    .pipe(fs.createWriteStream(filePath));
+}
+
 getRepoContributors("jquery", "jquery", function(err, result) {
   console.log("Errors:", err);
   result.forEach(function(contributor) {
-    console.log(contributor.avatar_url);
+    downloadImageByURL(contributor.avatar_url, `avatars/${contributor.login}.jpg`);
   });
 });
