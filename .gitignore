@@ -1,5 +1,7 @@
 # Token
 .env
+#avatars folder
+avatars
 # Logs
 logs
 *.log
