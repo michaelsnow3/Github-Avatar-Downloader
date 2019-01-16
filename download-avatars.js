@@ -1,8 +1,15 @@
 var request = require('request');
 var fs = require('fs');
 var dotenv = require('dotenv').config().parsed
+
 var inputRepoOwner = process.argv[2];
 var inputRepoName = process.argv[3];
+
+//accounts for recommend function arg
+if(process.argv[2] === 'recommend.js'){
+  inputRepoOwner = process.argv[3];
+  inputRepoName = process.argv[4];
+}
 
 function getRepoContributors(repoOwner, repoName, cb) {
   //if no dotenv file
@@ -28,6 +35,7 @@ function getRepoContributors(repoOwner, repoName, cb) {
       'Authorization': `token ${process.env.GITHUB_TOKEN}`
     }
   };
+
   //request github api to provide contributors of project
   request(options, function (err, res, body) {
     if(err) {

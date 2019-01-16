@@ -1,3 +1,0 @@
-module.exports = {
-  GITHUB_TOKEN: "7c840a9164f804e6a80617f861668186eb9d5f56"
-};
